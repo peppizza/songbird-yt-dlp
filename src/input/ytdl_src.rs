@@ -1,10 +1,7 @@
 use super::{
     children_to_reader,
     error::{Error, Result},
-    Codec,
-    Container,
-    Input,
-    Metadata,
+    Codec, Container, Input, Metadata,
 };
 use serde_json::Value;
 use std::{
@@ -18,7 +15,7 @@ use tokio_compat::{process::Command as TokioCommand, task};
 use tracing::trace;
 
 const YOUTUBE_DL_COMMAND: &str = if cfg!(feature = "youtube-dlc") {
-    "youtube-dlc"
+    "yt-dlp"
 } else {
     "youtube-dl"
 };
